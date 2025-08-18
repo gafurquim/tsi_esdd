@@ -8,7 +8,8 @@
 int func(int *x) {
   // Aqui temos um "detalhe" importante...
   // ... precisamos do "*" para acessar o valor da variável
-  return *x + 1;
+  *x = *x + 1;
+  return *x;
 }
 
 int main() {
