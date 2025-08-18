@@ -1,5 +1,5 @@
 /*
- * Em C, temos a passagem por valor como padrão...
+ * Em C, temos a passagem por valor como padrão para variáveis...
  * ... ou seja, passamos uma cópia da variável (e seu valor) para a função
  */
 
