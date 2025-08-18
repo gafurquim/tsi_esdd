@@ -6,7 +6,7 @@
  #include <stdio.h>
 
 int func(int x) {
-  x + 1;
+  x = x + 1;
   return x;
 }
 
