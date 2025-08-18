@@ -13,6 +13,6 @@ int main() {
     printf("Endereco da variavel a: %p\n", &a);
     printf("Valor do ponteiro p: %p\n", p);
     printf("Valor do objeto apontado por p (valor de a): %d\n", *p);
-    
+
     return 0;
 }
