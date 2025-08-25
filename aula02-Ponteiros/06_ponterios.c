@@ -1,5 +1,6 @@
 /*
- * Somente demostração, vamos aprofundar nesse conteúdo futuramente...
+ * Somente demostração, não assustem....
+ * ...vamos aprofundar nesse conteúdo futuramente
  */
 
 #include <stdio.h>
