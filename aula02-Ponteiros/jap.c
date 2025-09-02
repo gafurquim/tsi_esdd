@@ -3,7 +3,7 @@
 #include <unistd.h>
 
 int main() {
-    int secret = 13579;
+    int secret = 12000;
 
     printf("PID: %d\n", getpid());
     printf("Address of secret variable: %p\n", (void*)&secret);
