@@ -3,32 +3,24 @@
 #include <time.h>
 
 void fillArray(int *array, int size);
-int searchNumber(/* implementar */);
+// Utilize ponteiros para implementar a função
+// Percorra o array utilizando ponteiros
+int sumArray(/* implementar */);
 
 int main(int argc, char const *argv[]){
     
   int array[10];
-  int position, number=10;
 
   fillArray(array, 10);
 
-  while(number > 9 || number < 0){
-    printf("Digite um número entre 0 e 9: ");
-    scanf("%d", &number);
-  }
-
-  position = searchNumber(/* implementar */);
+  int sum;
+  sum = sumArray(/* implementar */);
 
   for(int i = 0; i < 10; i++){
     printf("Array[%d]: %d\n", i, *(array + i));
   }
 
-  if(position == -1){
-    printf("Valor %d não encontrado no array.\n", number);
-    return -1;
-  }
-
-  printf("\nValor %d encontrado na posição %d.\n", number, position);
+  printf("\nSoma do array: %d\n", sum);
     
   return 0;
 }
@@ -42,7 +34,7 @@ void fillArray(int *array, int size){
   }
 }
 
-int searchNumber(/* implementar */){
+int sumArray(/* implementar */){
   // implementar
   return -1;
 }
