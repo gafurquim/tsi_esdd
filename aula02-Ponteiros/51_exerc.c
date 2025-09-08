@@ -1,48 +1,29 @@
 #include <stdio.h>
-#include <stdlib.h>
-#include <time.h>
 
-void fillArray(int *array, int size);
-int searchNumber(/* implementar */);
+void swap(/* implementar */);
 
-int main(int argc, char const *argv[]){
-    
-  int array[10];
-  int position, number=10;
+int main() {
+  int a;
+  int b;
 
-  fillArray(array, 10);
+  printf("Digite o valor de a: ");
+  scanf("%d", &a);
 
-  while(number > 9 || number < 0){
-    printf("Digite um número entre 0 e 9: ");
-    scanf("%d", &number);
-  }
+  printf("Digite o valor de b: ");
+  scanf("%d", &b);
 
-  position = searchNumber(/* implementar */);
+  printf("\nValor da variavel a: %d\n", a);
+  printf("Valor da variavel b: %d\n", b);
 
-  for(int i = 0; i < 10; i++){
-    printf("Array[%d]: %d\n", i, *(array + i));
-  }
+  swap(/* implementar */);
+  printf("--------------------------------\n");
+  
+  printf("Valor da variavel a (depois): %d\n", a);
+  printf("Valor da variavel b (depois): %d\n", b);
 
-  if(position == -1){
-    printf("Valor %d não encontrado no array.\n", number);
-    return -1;
-  }
-
-  printf("\nValor %d encontrado na posição %d.\n", number, position);
-    
   return 0;
 }
 
-void fillArray(int *array, int size){
-  // Inicializa o gerador de números aleatórios
-  srand(time(0));
-
-  for(int i = 0; i < size; i++){
-    *(array + i) = rand() % 10;
-  }
-}
-
-int searchNumber(/* implementar */){
+void swap(/* implementar */) {
   // implementar
-  return -1;
 }
