@@ -3,7 +3,7 @@
 #include <time.h>
 
 void fillArray(int *array, int size);
-int searchNumber(/*implementar */);
+int searchNumber(/* implementar */);
 
 int main(int argc, char const *argv[]){
     
@@ -17,7 +17,7 @@ int main(int argc, char const *argv[]){
     scanf("%d", &number);
   }
 
-  position = searchNumber(/*implementar */);
+  position = searchNumber(/* implementar */);
 
   for(int i = 0; i < 10; i++){
     printf("Array[%d]: %d\n", i, *(array + i));
@@ -42,7 +42,7 @@ void fillArray(int *array, int size){
   }
 }
 
-int searchNumber(/*implementar */){
+int searchNumber(/* implementar */){
   // implementar
   return -1;
 }
