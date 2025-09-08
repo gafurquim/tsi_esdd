@@ -6,15 +6,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void fillArray(char (*array)[4], int size){
-  // iniciando o ponteiro no início do array
-  char (*ptr)[4] = array;
-
-  // Percebam o ptr++
-  for(int i = 0; i < size; i++, ptr++){
-    sprintf(*ptr, "%d", (i + 1) * 10);
-  }
-}
+void fillArray(char (*array)[4], int size);
 
 int main(void){
   char array[10][4];
@@ -27,4 +19,14 @@ int main(void){
   }
 
   return 0;
+}
+
+void fillArray(char (*array)[4], int size){
+  // iniciando o ponteiro no início do array
+  char (*ptr)[4] = array;
+
+  // Percebam o ptr++
+  for(int i = 0; i < size; i++, ptr++){
+    sprintf(*ptr, "%d", (i + 1) * 10);
+  }
 }

@@ -6,12 +6,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void fillArray(char (*array)[4], int size){
-  for(int i = 0; i < size; i++){
-    //*(array + i) = (i+1) * 10; // ainda funciona, mas...
-    sprintf(*(array + i), "%d", (i + 1) * 10);
-  }
-}
+void fillArray(char (*array)[4], int size);
 
 int main(void){
   // Para caber "100" + '\0'
@@ -23,4 +18,11 @@ int main(void){
     printf("Array[%d]: %s\n", i, *(array + i));
   }
   return 0;
+}
+
+void fillArray(char (*array)[4], int size){
+  for(int i = 0; i < size; i++){
+    //*(array + i) = (i+1) * 10; // ainda funciona, mas...
+    sprintf(*(array + i), "%d", (i + 1) * 10);
+  }
 }

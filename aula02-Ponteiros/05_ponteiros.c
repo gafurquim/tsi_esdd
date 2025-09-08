@@ -1,11 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void fillArray(int *array){
-  for(int i = 0; i < 10; i++){
-    *(array + i) = (i+1) * 10;
-  }
-}
+void fillArray(int *array);
 
 int main(int argc, char const *argv[]){
     
@@ -18,4 +14,10 @@ int main(int argc, char const *argv[]){
   }
     
   return 0;
+}
+
+void fillArray(int *array){
+  for(int i = 0; i < 10; i++){
+    *(array + i) = (i+1) * 10;
+  }
 }
