@@ -1,34 +1,17 @@
-/*
- *  Esse código é propositalmente ineficiente...
- *  ... para fins didático, não deve ser utilizado!
- */
-#include <stdio.h>
+// Implementar uma função que desloca os valores de um array para a direita
+#include <stdlib.h>
 
-void fillArray(int array[], int size);
+int main(){
+  int *my_little_pointer = NULL;
 
- int main(){
-  // Implementar utilizando um array 
-  // do tamanho digitado pelo usuário
-  printf("Digite o tamanho do array: ");
-  int size;
-  scanf("%d", &size);
+  my_little_pointer = (int*) malloc(10*sizeof(int));
 
-  // implementar
- 
-  fillArray(array, size);
- 
-  for(int i=0; i<size; i++){
-    printf("%d\n", array[i]);
-  }
+  for(int i = 0; i < 10; i++)
+    *(my_little_pointer + i) = i*10;
 
-  printf("Pressione qualquer tecla para sair...\n");
-  getchar();
- 
+  shift(my_little_pointer);
+
+  free(my_little_pointer);
+
   return 0;
- }
-
-void fillArray(int array[], int size){
-  for(int i=0; i<size; i++){
-    array[i] = i;
-  }
 }

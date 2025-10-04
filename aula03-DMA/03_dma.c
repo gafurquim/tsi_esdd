@@ -2,9 +2,10 @@
 #include <stdlib.h> // para o uso de malloc
 
 int main(){
-  int *int_pointer /* = NULL */;
+  int *int_pointer = NULL;
 
   printf("Endereço do ponteiro (NULL): %p\n", int_pointer);
+  // Alocando memória para um int
   int_pointer = (int*) malloc(sizeof(int));
 
   if(int_pointer == NULL){
@@ -17,6 +18,7 @@ int main(){
   printf("Endereço do ponteiro: %p\n", int_pointer);
   printf("Valor do ponteiro: %d\n", *int_pointer);
 
+  // Desalocando memória
   free(int_pointer);
 
   return 0;

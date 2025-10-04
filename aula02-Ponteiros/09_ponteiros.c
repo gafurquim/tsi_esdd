@@ -7,7 +7,8 @@ void increaseArray(int array[], int size);
 int main(int argc, char const *argv[]){
     
   int array[10];
-  int *ptr = array;
+  int *ptr = NULL;
+  ptr = array;
 
   fillArray(ptr, 10);
   increaseArray(ptr, 10);

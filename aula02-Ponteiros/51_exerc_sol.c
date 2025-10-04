@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-void swap(/* implementar */);
+void swap(int *valor_1, int *valor_2);
 
 int main() {
   int a, b;
@@ -14,7 +14,7 @@ int main() {
   printf("\nValor da variavel a: %d\n", a);
   printf("Valor da variavel b: %d\n", b);
 
-  swap(/* implementar */);
+  swap(&a, &b);
   printf("--------------------------------\n");
   
   printf("Valor da variavel a (depois): %d\n", a);
@@ -23,6 +23,10 @@ int main() {
   return 0;
 }
 
-void swap(/* implementar */) {
-  // implementar
+void swap(int *valor_1, int *valor_2) {
+  int valor_aux;
+
+  valor_aux = *valor_1;
+  *valor_1 = *valor_2;
+  *valor_2 = valor_aux;
 }
