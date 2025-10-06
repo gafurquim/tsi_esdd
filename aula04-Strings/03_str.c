@@ -7,6 +7,7 @@ int main(){
 
   printf("Size: %d\n", strlen(str_hello));
 
+  // Perceba que, sem o '\0' no final, o strlen erra na contagem
   for(int i = 0; i < strlen(str_hello); i++){
     printf("[%d]: %c\n", i, str_hello[i]);
   }

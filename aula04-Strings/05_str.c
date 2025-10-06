@@ -4,8 +4,10 @@
 
 int main(){
 
-  // Por estar entre aspas duplas, é uma string... 
-  // ...ou seja, 'sizeof' conta o '\0' na tamanho
+  /* 
+   * Por estar entre aspas duplas, é uma string... 
+   * ...ou seja, 'sizeof' conta o '\0' na tamanho
+   */
   printf("Tamanho da string (sizeof): %d\n", sizeof("Hello World!"));
   // ...mas cuidado, 'strlen' não conta o '\0'
   printf("Tamanho da string (strlen): %d\n", strlen("Hello World!"));
