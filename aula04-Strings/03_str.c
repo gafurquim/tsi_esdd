@@ -2,8 +2,15 @@
 #include <string.h>
 
 int main(){
-  char str_garbage = 'A';
+  // Somente um pouquinho de lixo antes...
+  char str_garbage_1 = 'A';
   char str_hello[13] = {'H', 'e', 'l', 'l', 'o', ',', ' ', 'W', 'o', 'r', 'l', 'd', '!'};
+  // ...e depois da declaração...
+  char str_garbage_2 = 'C';
+
+  // Alguns compiladores colocam o '/0' automaticamente...
+  // ... então, vamos apagar à força... :)
+  str_hello[13] = 'B';
 
   printf("Size: %d\n", strlen(str_hello));
 

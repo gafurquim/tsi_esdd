@@ -10,7 +10,7 @@ int main(){
   }
 
   printf("\nImprimindo com sizeof:\n");
-  for(int i = 0; i < sizeof(str_hello) - 1; i++){
+  for(int i = 0; i < sizeof(str_hello); i++){
     printf("[%d]: %c\n", i, *(str_hello + i));
   }
 
