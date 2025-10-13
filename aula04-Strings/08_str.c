@@ -24,7 +24,7 @@ int main(){
   return 0;
 }
 
-void print_to_middle(char *str) {
+void print_to_middle(char *str){
 
   // Esse vai apontar para a primeira posição da string
   char *p_first_char = str;

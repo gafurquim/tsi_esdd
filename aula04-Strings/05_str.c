@@ -31,6 +31,7 @@ int main(){
 
   printf("%s\n", str_hello);
 
+  // Liberando o espaço alocado em memória
   free(str_hello);
 
   return 0;
