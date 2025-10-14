@@ -7,7 +7,7 @@ int main(){
   printf("Endereço do ponteiro (NULL): %p\n", int_pointer);
   // Alocando memória para um int
   int_pointer = (int*) malloc(sizeof(int));
-
+  // verificando se a alocação foi bem sucedida
   if(int_pointer == NULL){
     printf("Erro na alocação de memória\n");
     return 1;

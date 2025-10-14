@@ -10,9 +10,15 @@ int main(){
   
   // Alocando memória para a string
   str_hello_pointer = (char*) malloc(sizeof(char)*sizeof("Hello World!"));
+  // verificando se a alocação foi bem sucedida
+  if(str_hello_pointer == NULL){
+    printf("Erro na alocação de memória\n");
+    return 1;
+  }
 
   // Copiando a string para o array
-  for(int i = 0; i < sizeof("Hello World!"); i++){
+  size_t str_size = sizeof("Hello World!");
+  for(size_t i = 0; i < str_size; i++){
     *(str_hello_pointer + i) = "Hello World!"[i];
   }
 
@@ -35,7 +41,8 @@ void inverse_print(char *str) {
    * ... e strlen mostra o tamanho da string sem o '\0'
    */
   char *p_char = NULL;
-  for(p_char = (str + strlen(str) - 1); p_char != str; p_char--){
+  int str_size = strlen(str);
+  for(p_char = (str + str_size - 1); p_char != str; p_char--){
       printf("%c", *p_char);
   }
 

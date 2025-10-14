@@ -8,15 +8,12 @@ int main(){
   // ...e depois da declaração...
   char str_garbage_2 = 'C';
 
-  // Alguns compiladores colocam o '/0' automaticamente...
-  // ... então, vamos apagar à força... :)
-  str_hello[13] = 'B';
-
-  printf("Size: %d\n", strlen(str_hello));
+  printf("Size: %zu\n", strlen(str_hello));
 
   // Perceba que, sem o '\0' no final, o strlen erra na contagem
-  for(int i = 0; i < strlen(str_hello); i++){
-    printf("[%d]: %c\n", i, str_hello[i]);
+  size_t str_size = strlen(str_hello);
+  for(size_t i = 0; i < str_size; i++){
+    printf("[%zu]: %c\n", i, str_hello[i]);
   }
 
   printf("%s\n", str_hello);

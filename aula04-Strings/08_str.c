@@ -10,6 +10,11 @@ int main(){
   
   // Alocando memória para a string
   str_pointer = (char*) malloc(sizeof(char)*100);
+  // verificando se a alocação foi bem sucedida
+  if(str_pointer == NULL){
+    printf("Erro na alocação de memória\n");
+    return 1;
+  }
 
   // Lendo uma string qualquer
   printf("Digite uma frase: ");

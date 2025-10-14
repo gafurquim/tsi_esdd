@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-int my_strlen(char *str);
+size_t my_strlen(char *str);
 
 int main(){
 
@@ -17,13 +17,13 @@ int main(){
   // Remove o '\n' (enter), caso tenha...
   str[strcspn(str, "\n")] = '\0';
 
-  printf("Tamanho da string: %d\n", my_strlen(str));
+  printf("Tamanho da string: %zu\n", my_strlen(str));
 
   return 0;
 }
 
-int my_strlen(char *str){
-  int i = 0;
+size_t my_strlen(char *str){
+  size_t i = 0;
 
   /*
    * Usando aritmética de ponteiros para...

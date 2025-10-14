@@ -5,13 +5,13 @@ int main(){
   char str_hello[] = "Hello, World!";
 
   printf("Imprimindo com strlen:\n");
-  for(int i = 0; i < strlen(str_hello); i++){
-    printf("[%d]: %c\n", i, *(str_hello + i));
+  for(size_t i = 0; i < strlen(str_hello); i++){
+    printf("[%zu]: %c\n", i, *(str_hello + i));
   }
 
   printf("\nImprimindo com sizeof:\n");
-  for(int i = 0; i < sizeof(str_hello); i++){
-    printf("[%d]: %c\n", i, *(str_hello + i));
+  for(size_t i = 0; i < sizeof(str_hello); i++){
+    printf("[%zu]: %c\n", i, *(str_hello + i));
   }
 
   return 0;
