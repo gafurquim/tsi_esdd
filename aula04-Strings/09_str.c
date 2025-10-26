@@ -34,6 +34,11 @@ int main(){
   char *str_point_cat = NULL;
   str_point_cat = my_strcat(str_pointer_first, str_pointer_second);
 
+  if(str_point_cat == NULL){
+    printf("Erro na alocação de memória durante concatenação\n");
+    return 1;
+  }
+
   printf("Strings concatenadas: %s\n", str_point_cat);
 
   free(str_pointer_first);

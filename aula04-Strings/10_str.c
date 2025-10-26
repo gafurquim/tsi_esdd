@@ -19,14 +19,20 @@ int main(){
     return 1;
   }
 
-  // Lendo primeira string
+  // Lendo primeira string, agora com classe
   printf("Digite a primeira string: ");
-  fgets(str_pointer_first, strs_size, stdin);
+  if (fgets(str_pointer_first, strs_size, stdin) == NULL) {
+      printf("Erro ou EOF detectado\n");
+      return 1;
+    }
   str_pointer_first[strcspn(str_pointer_first, "\n")] = '\0';
 
   // Lendo segunda string
   printf("Digite a segunda string: ");
-  fgets(str_pointer_second, strs_size, stdin);
+  if (fgets(str_pointer_second, strs_size, stdin) == NULL) {
+      printf("Erro ou EOF detectado\n");
+      return 1;
+  }
   str_pointer_second[strcspn(str_pointer_second, "\n")] = '\0';
 
   // Perceba que, nesse caso, assim como no strcat do string.h...

@@ -3,7 +3,6 @@
 #include <string.h>
 
 int main(){
-
   /* 
    * Por estar entre aspas duplas, é uma string... 
    * ...ou seja, 'sizeof' conta o '\0' na tamanho
