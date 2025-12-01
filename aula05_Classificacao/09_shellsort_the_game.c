@@ -2,12 +2,12 @@
 #include <stdlib.h>
 #include <time.h>
 
-void insercao_direta_the_game(int *vector, size_t vector_size);
+void shellsort(int *vector, size_t vector_size);
+void shellsort_incr(int *vector, size_t inicio, size_t incr, size_t vector_size);
 void print_vector(int *vector, size_t vector_size);
 
 int main(){
-  system("clear");
-  size_t vector_size = 10;
+  size_t vector_size = 20;
 
   // Alocando memória para o vetor
   int *int_pointer = malloc(sizeof(int)*vector_size);
@@ -24,13 +24,13 @@ int main(){
     *(int_pointer + i) = rand() % 100;
   }
 
-  printf("Vetor original:\n");
+  printf("Vetor original: ");
   print_vector(int_pointer, vector_size);
 
   // Ordenando o vetor
-  insercao_direta_the_game(int_pointer, vector_size);
+  shellsort(int_pointer, vector_size);
 
-  printf("\nVetor ordenado:\n");
+  printf("Vetor ordenado: ");
   print_vector(int_pointer, vector_size);
 
   // Nunca esqueça de liberar a memória alocada
@@ -39,23 +39,30 @@ int main(){
   return 0;
 }
 
-void insercao_direta_the_game(int *vector, size_t vector_size){
-  size_t i = 1, pos_menor, pos_primeira, pos_segunda;
+void shellsort(int *vector, size_t vector_size){
+  // Para cada incremento
+  for (size_t i = vector_size/2; i > 2; i /= 2){
+    
+    // Ordena cada sublista
+    for (size_t j = 0; j < i; j++)
+      shellsort_incr(vector, j, i, vector_size);
+  }
+
+  // Ordena a lista final
+  shellsort_incr(vector, 0, 1, vector_size);
+}
+
+void shellsort_incr(int *vector, size_t inicio, size_t incr, size_t vector_size) {
   int aux;
+  size_t pos_primeira, pos_segunda;
   char ch;
-
-  printf("Let's play a game!\n");
-  ch = getchar();
-
-  while (i < vector_size){
-    // Encontrando a posição do menor elemento
-    pos_menor = i;
-
-    // Deslocando o menor elemento para a posição correta
-    while (pos_menor > 0 && *(vector + pos_menor-1) > *(vector + pos_menor)){
+  
+  for (size_t i = inicio+incr; i < vector_size; i += incr)
+    for (size_t j = i; ((j >= incr) && (*(vector + j) < *(vector + j-incr))); j -= incr){
+      
       // Let's play a game
       system("clear");
-      printf("Descubra o próximo passo, quais posições serão trocadas?\n");
+      printf("Descubra o próximo passo, quais posições serão trocadas? [incremento: %zu]\n", incr);
       print_vector(vector, vector_size);
       printf("Digite a primeira posição: ");
       scanf("%zu", &pos_primeira);
@@ -63,10 +70,10 @@ void insercao_direta_the_game(int *vector, size_t vector_size){
       scanf("%zu", &pos_segunda);
       
       // Comparando trocas
-      while(!((pos_primeira == pos_menor && pos_segunda == pos_menor-1) || 
-          (pos_primeira == pos_menor-1 && pos_segunda == pos_menor))){
+      while(!((pos_primeira == j-incr && pos_segunda == j) || 
+          (pos_primeira == j && pos_segunda == j-incr))){
         system("clear");
-        printf("Movimento incorreto, tente novamente.\n");
+        printf("Movimento incorreto, tente novamente. [incremento: %zu]\n", incr);
         print_vector(vector, vector_size);
         printf("Digite a primeira posição: ");
         scanf("%zu", &pos_primeira);
@@ -77,13 +84,10 @@ void insercao_direta_the_game(int *vector, size_t vector_size){
       while ((ch = getchar()) != '\n' && ch != EOF){}
       ch = getchar();
 
-      aux = *(vector + pos_menor);
-      *(vector + pos_menor) = *(vector + pos_menor-1);
-      *(vector + pos_menor-1) = aux;
-      pos_menor--;
+      aux = *(vector + j);
+      *(vector + j) = *(vector + j-incr);
+      *(vector + j-incr) = aux;
     }
-    i++;
-  }
 }
 
 void print_vector(int *vector, size_t vector_size){

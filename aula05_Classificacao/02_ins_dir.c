@@ -24,20 +24,12 @@ int main(){
     *(int_pointer + i) = rand() % 100;
   }
 
-  printf("Vetor original: ");
-  print_vector(int_pointer, vector_size);
-
   // Vamos medir o tempo de execução
   clock_t start, end;
   start = clock();
   insercao_direta(int_pointer, vector_size);
   end = clock();
   printf("\nTempo de execução: %f\n", (double)(end - start) / CLOCKS_PER_SEC);
-  
-  //insercao_direta_pausada(int_pointer, vector_size);
-
-  printf("Vetor ordenado: ");
-  print_vector(int_pointer, vector_size);
 
   free(int_pointer);
 

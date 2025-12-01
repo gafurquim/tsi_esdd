@@ -6,6 +6,7 @@ void selecao_direta(int *vector, size_t vector_size);
 void print_vector(int *vector, size_t vector_size);
 
 int main(){
+  system("clear");
   size_t vector_size = 10;
 
   // Alocando memória para o vetor
@@ -23,13 +24,13 @@ int main(){
     *(int_pointer + i) = rand() % 100;
   }
 
-  printf("Vetor original: ");
+  printf("Vetor original\n");
   print_vector(int_pointer, vector_size);
 
   // Ordenando o vetor
   selecao_direta(int_pointer, vector_size);
 
-  printf("Vetor ordenado: ");
+  printf("Vetor ordenado\n");
   print_vector(int_pointer, vector_size);
 
   // Nunca esqueça de liberar a memória alocada
@@ -41,6 +42,10 @@ int main(){
 void selecao_direta(int *vector, size_t vector_size){
   size_t i, next_min_pos, min, pos_primeira, pos_segunda;
   int aux;
+  char ch;
+
+  printf("Let's play a game!\n");
+  ch = getchar();
 
   // Ordenando o vetor
   for (i = 0; i < (vector_size-1); i++) {
@@ -57,25 +62,30 @@ void selecao_direta(int *vector, size_t vector_size){
     // Trocando os elementos
     if (i != min) {
       // Let's play a game
-      printf("\nDescubra o pŕoximo passo, quais posições serão trocadas?\n");
+      system("clear");
+      printf("Descubra o próximo passo, quais posições serão trocadas?\n");
       print_vector(vector, vector_size);
-      printf("Digite a primeira posição [%zu, %zu]: ", i, min);
+      printf("Digite a primeira posição: ");
       scanf("%zu", &pos_primeira);
-      printf("Digite a segunda posição [%zu, %zu]: ", i, min);
+      printf("Digite a segunda posição: ");
       scanf("%zu", &pos_segunda);
       
       // Comparando trocas
       while(!((pos_primeira == i && pos_segunda == min) || 
           (pos_primeira == min && pos_segunda == i))){
-        printf("\nMovimento incorreto, tente novamente.\n");
+        system("clear");
+        printf("Movimento incorreto, tente novamente.\n");
         print_vector(vector, vector_size);
-        printf("Digite a primeira posição [%zu, %zu]: ", i, min);
+        printf("Digite a primeira posição: ");
         scanf("%zu", &pos_primeira);
-        printf("Digite a segunda posição [%zu, %zu]: ", i, min);
+        printf("Digite a segunda posição: ");
         scanf("%zu", &pos_segunda);
       }
 
-      printf("\nMovimento correto\n");      
+      printf("\nMovimento correto!\n");
+      while ((ch = getchar()) != '\n' && ch != EOF){}
+      ch = getchar();
+          
       aux = *(vector + i);
       *(vector + i) = *(vector + min);
       *(vector + min) = aux;
