@@ -1,3 +1,8 @@
+/*
+ * Esse código foi extremamente simplificado para fins didático...
+ * ... não deve ser utilizado!
+ */
+
 #include <stdio.h>
 
 typedef struct {

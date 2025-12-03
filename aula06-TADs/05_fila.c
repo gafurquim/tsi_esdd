@@ -1,4 +1,10 @@
-#include <stdio.h>
+/*
+ * Esse código simplificado para fins didático...
+ * ... e em construção...
+ * ... não deve ser utilizado!
+ */
+
+ #include <stdio.h>
 #include <stdlib.h>
 
 typedef struct Node {

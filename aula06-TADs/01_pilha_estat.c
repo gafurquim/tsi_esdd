@@ -1,3 +1,8 @@
+/*
+ * Esse código simplificado para fins didático...
+ * ... não deve ser utilizado!
+ */
+
 #include <stdio.h>
 #include <stdlib.h>
 

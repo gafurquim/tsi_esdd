@@ -1,9 +1,15 @@
+/*
+ * Esse código foi extremamente simplificado para fins didático...
+ * ... não deve ser utilizado!
+ */
+
 #include <stdlib.h>
 #include <stdio.h>
 
 typedef struct Carta{
   char naipe;
   char tipo;
+  struct Carta *anterior_carta;
   struct Carta *proxima_carta;
 } Carta;
 
